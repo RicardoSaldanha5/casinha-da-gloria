@@ -68,12 +68,15 @@
                 </div>
             </section>
         </section>
+
+
+
         <section id="rules" class="rules-section">
             <div class="container">
                 <h2>Regulamentos do Alojamento</h2>
                 <p>Para garantir uma estadia confortável e segura, por favor, respeite as seguintes regras:</p>
-                <div class="rules-grid">
-                    <div class="rule-item">
+                <div class="rules-carousel">
+                    <div class="rule-item active">
                         <i class="fas fa-parking"></i>
                         <h3>Estacionamento</h3>
                         <p>Estacionamento gratuito e privado disponível no local (não carece de reserva).</p>
@@ -86,7 +89,7 @@
                     <div class="rule-item">
                         <i class="fas fa-baby"></i>
                         <h3>Cozinha</h3>
-                        <p>Cadeira alta para bebés, mesa de jantar, máquina de café, produtos de limpeza, torradeira, placa de fogão, forno, utensílios de cozinha, máquina de lavar louça, micro-ondas, frigorífico.</p>
+                        <p>Cadeira alta para bebés, mesa de jantar, máquina de café, cafeteira elétrica, produtos de limpeza, tostadeira, placa de fogão, forno, utensílios de cozinha, máquina de lavar louça, micro-ondas, frigorífico.</p>
                     </div>
                     <div class="rule-item">
                         <i class="fas fa-bed"></i>
@@ -160,6 +163,8 @@
                         <p><strong>Português</strong>, Inglês, Espanhol, Francês.</p>
                     </div>
                 </div>
+                <button id="prev-rule" class="nav-button">&#10094;</button>
+                <button id="next-rule" class="nav-button">&#10095;</button>
             </div>
         </section>
 
@@ -258,5 +263,31 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const prevButton = document.getElementById('prev-rule');
+                const nextButton = document.getElementById('next-rule');
+                const items = document.querySelectorAll('.rules-carousel .rule-item');
+                let currentIndex = 0;
+            
+                function showItem(index) {
+                    items.forEach((item, i) => {
+                        item.classList.toggle('active', i === index);
+                    });
+                }
+            
+                prevButton.addEventListener('click', function() {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+                    showItem(currentIndex);
+                });
+            
+                nextButton.addEventListener('click', function() {
+                    currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+                    showItem(currentIndex);
+                });
+            
+                showItem(currentIndex);
+            });
+            </script>
 </body>
 </html>
