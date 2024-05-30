@@ -272,7 +272,7 @@ main {
 
 .rules-section {
     background-color: #f7f7f7;
-    padding: 50px 0;
+    padding: 50px 0px 0px 0px;
 }
 
 .rules-section .container {
@@ -386,18 +386,9 @@ main {
     line-height: 1.6;
 }
 
-
-
-
-
-
-
-
-
-
 .safety-section {
     background-color: #f7f7f7;
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .safety-section .container {
