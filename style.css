@@ -1,0 +1,215 @@
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+header {
+    background: var(--deep-green);
+    color: var(--light-cream);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+nav a:hover {
+    color: #e8491d;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e8491d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#back-to-top:hover {
+    background-color: #333;
+}
+
+/* Estilo para a seção da galeria */
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+section {
+    padding: 20px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.photo-gallery {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    
+}
+
+.photo-item {
+    flex: 1 0 100%;
+    max-width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.photo-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.photo-navigation button {
+    background-color: var(--deep-green);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.photo-navigation button:hover {
+    background-color: #e8491d;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .photo-gallery {
+        display: block;
+    }
+
+    .photo-item {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+/* Estilo para a seção de preços */
+#prices {
+    background: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#prices h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.pricing-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.pricing-table thead th {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.pricing-table tbody td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    font-size: 1em;
+    text-align: center;
+}
+
+.pricing-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.conditions {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+    padding: 0 20px;
+}
+
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #e8491d;
+}
+
+footer h3 {
+    margin-top: 0;
+}
