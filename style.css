@@ -9,6 +9,7 @@ body {
 
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
     overflow: hidden;
@@ -65,22 +66,6 @@ nav a:hover {
 }
 
 /* Estilo para a seção da galeria */
-/* Estilo geral */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-    padding: 20px;
-    overflow: hidden;
-}
-
 section {
     padding: 20px 0;
     background-color: #ffffff;
@@ -98,7 +83,6 @@ section h2 {
     display: flex;
     overflow: hidden;
     justify-content: center;
-    
 }
 
 .photo-item {
@@ -133,19 +117,6 @@ section h2 {
 .photo-navigation button:hover {
     background-color: #e8491d;
 }
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .photo-gallery {
-        display: block;
-    }
-
-    .photo-item {
-        display: block;
-        text-align: center;
-    }
-}
-
 
 /* Estilo para a seção de preços */
 #prices {
@@ -192,12 +163,12 @@ section h2 {
     padding: 0 20px;
 }
 
+/* Estilo para o footer */
 footer {
     background: #231610;
     color: #ffffff;
     text-align: center;
-    padding: 1px 0;
-    
+    padding: 10px 0;
 }
 
 footer a {
@@ -213,3 +184,38 @@ footer a:hover {
 footer h3 {
     margin-top: 0;
 }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .photo-gallery {
+        display: block;
+    }
+
+    .photo-item {
+        display: block;
+        text-align: center;
+    }
+
+    .conditions {
+        text-align: center;
+        padding: 0;
+    }
+
+    .pricing-table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+    }
+
+    .pricing-table thead th,
+    .pricing-table tbody td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
