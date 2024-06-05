@@ -25,11 +25,12 @@ header {
 header h1 {
     margin: 0;
     font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
 }
 
 header p {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 nav {
@@ -45,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #e8491d;
+    color: black;
 }
 
 #back-to-top {
@@ -67,9 +68,11 @@ nav a:hover {
 
 /* Estilo para a seção da galeria */
 section {
-    padding: 20px 0;
-    background-color: #ffffff;
-    margin-bottom: 20px;
+    background-color: #ffffff;  
+}
+
+section#galeria {
+    padding: 0px;
 }
 
 section h2 {
@@ -87,7 +90,7 @@ section h2 {
 
 .photo-item {
     flex: 1 0 100%;
-    max-width: 100%;
+    max-width: 100vh;
     display: none;
     justify-content: center;
     align-items: center;
@@ -119,6 +122,20 @@ section h2 {
 }
 
 /* Estilo para a seção de preços */
+
+main {
+    padding: 0px;
+}
+
+.branco {
+    background-color: white;
+}
+.cinza {
+    background-color: #f3f3f3;
+}
+.preço {
+    background-color: rgb(218, 248, 218);
+}
 #prices {
     background: #ffffff;
     padding: 10px 0;
@@ -163,6 +180,39 @@ section h2 {
     padding: 0 20px;
 }
 
+section#contactos {
+    padding: 20px 0;
+}
+
+section#contactos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section#contactos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+section#contactos p, section#contactos a {
+    font-size: 1em;
+    color: #333;
+}
+
+section#contactos .social-media a {
+    
+    text-decoration: none;
+    color: var(--deep-green);
+    font-size: 1em;
+}
+
+section#contactos .social-media a:hover {
+    color: #e8491d;
+}
+
 /* Estilo para o footer */
 footer {
     background: #231610;
@@ -171,18 +221,49 @@ footer {
     padding: 10px 0;
 }
 
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: ;
+}
+
+footer .footer-links {
+    margin-bottom: 10px;
+    
+}
+
 footer a {
     color: #ffffff;
     text-decoration: none;
     margin: 0 10px;
+    
 }
 
 footer a:hover {
     color: #e8491d;
+    
 }
 
 footer h3 {
     margin-top: 0;
+    
+}
+
+footer .footer-contact a {
+    display: block;
+    margin: 5px 0;
+    font-size: 0.8em;
+}
+
+footer .footer-contact a i {
+    margin-right: 5px;
+    
+}
+
+#titulo{
+    font-size: 1.3em;
 }
 
 /* Estilos responsivos */
@@ -216,6 +297,14 @@ footer h3 {
     .pricing-table tbody td {
         padding: 10px;
         font-size: 0.9em;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    footer .footer-links, footer .footer-contact {
+        text-align: center;
     }
 }
 
