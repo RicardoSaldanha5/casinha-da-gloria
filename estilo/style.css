@@ -566,11 +566,11 @@ section.video{
 }
 
 .highlight-button {
-    background-color: #231610;
-    color: #E0DFDB;
+    background-color: #E0DFDB; 
+    color: black;
     padding: 15px 30px;
     font-size: 1.2em;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Roboto', sans-serif;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -580,7 +580,7 @@ section.video{
 }
 
 .highlight-button:hover {
-    background-color: #E0DFDB;
+    background-color: var(--luxury-gold);
     color: #231610;
 }
 
