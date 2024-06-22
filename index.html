@@ -229,6 +229,22 @@
                 </div>
             </div>
         </section>
+        <section id="avaliacao">
+            <div class="container">
+                <h2>Avalie a sua estadia</h2>
+                <p>(A sua avaliação conta muito para nós)</p>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <p id="rating-value">Nível de satisfação: 0 estrelas</p>
+                <button id="submit-rating">Enviar Avaliação</button>
+                <p id="average-rating">Classificação Média: 0 estrelas</p>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-container">
@@ -290,6 +306,82 @@
             
                 showItem(currentIndex);
             });
+
+            // botão de avaliação
+            document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star');
+            const ratingValue = document.getElementById('rating-value');
+            const submitRating = document.getElementById('submit-rating');
+            const averageRating = document.getElementById('average-rating');
+            let selectedRating = 0;
+
+            // Carrega avaliações anteriores do localStorage
+            let ratings = JSON.parse(localStorage.getItem('ratings')) || [];
+
+            // Função para atualizar a exibição das estrelas com base na classificação
+            function updateStars(rating) {
+                stars.forEach(star => {
+                    star.classList.remove('selected');
+                    if (star.getAttribute('data-value') <= rating) {
+                        star.classList.add('selected');
+                    }
+                });
+            }
+
+            // Função para atualizar a média de avaliações
+            function updateAverageRating() {
+                if (ratings.length > 0) {
+                    const total = ratings.reduce((acc, curr) => acc + curr, 0);
+                    const avg = (total / ratings.length).toFixed(1);
+                    averageRating.textContent = `Classificação Média: ${avg} estrelas`;
+                } else {
+                    averageRating.textContent = 'Classificação Média: 0 estrelas';
+                }
+            }
+
+            // Adiciona eventos de clique, mouseover e mouseout às estrelas
+            stars.forEach(star => {
+                // Evento de clique para selecionar a classificação
+                star.addEventListener('click', function() {
+                    selectedRating = this.getAttribute('data-value');
+                    ratingValue.textContent = `Nível de satisfação: ${selectedRating} estrelas`;
+                    updateStars(selectedRating);
+                });
+
+                // Evento de mouseover para preencher as estrelas ao passar o cursor
+                star.addEventListener('mouseover', function() {
+                    const value = this.getAttribute('data-value');
+                    stars.forEach(star => {
+                        if (star.getAttribute('data-value') <= value) {
+                            star.classList.add('hover');
+                        } else {
+                            star.classList.remove('hover');
+                        }
+                    });
+                });
+
+                // Evento de mouseout para remover o preenchimento das estrelas quando o cursor sai
+                star.addEventListener('mouseout', function() {
+                    stars.forEach(star => star.classList.remove('hover'));
+                    updateStars(selectedRating);
+                });
+            });
+
+            // Evento de clique para enviar a avaliação
+            submitRating.addEventListener('click', function() {
+                if (selectedRating > 0) {
+                    ratings.push(parseInt(selectedRating));
+                    localStorage.setItem('ratings', JSON.stringify(ratings));
+                    alert(`Obrigado pela sua avaliação de ${selectedRating} estrelas!`);
+                    updateAverageRating();
+                } else {
+                    alert('Por favor, selecione uma avaliação antes de enviar.');
+                }
+            });
+
+            // Atualiza a média de avaliações ao carregar a página
+            updateAverageRating();
+        });
             </script>
 </body>
 </html>
