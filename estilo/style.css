@@ -752,3 +752,67 @@ p#avaliacao{
 #average-rating{
     margin-bottom: 0px;
 }
+
+/* Botão de linguas */
+
+
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.dropdown-toggle {
+    background-color: var(--deep-green);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--luxury-gold);
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--light-cream);
+    border: 1px solid var(--luxury-gold);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--deep-green);
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--luxury-gold);
+    border-radius: 2px;
+    padding: 4px;
+}
