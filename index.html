@@ -33,9 +33,8 @@
         <button class="dropdown-toggle" onclick="toggleDropdown()">
             <img src="imagens/no-mundo-todo branco .png" alt="Escolher Idioma">
         </button>
-
         <ul class="dropdown-menu" id="language-menu">
-            <li><a href=" https://ricardosaldanha5.github.io/english-casinha-da-gloria/">English</a></li>
+            <li><a href="https://ricardosaldanha5.github.io/english-casinha-da-gloria/">English</a></li>
             <li><a href="#">Español</a></li>
             <li><a href="#">Français</a></li>
         </ul>
@@ -403,7 +402,7 @@
 
         // Fechar o menu se clicar fora dele
         window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-toggle')) {
+            if (!event.target.closest('.language-selector')) {
                 var menus = document.getElementsByClassName('dropdown-menu');
                 for (var i = 0; i < menus.length; i++) {
                     var openMenu = menus[i];

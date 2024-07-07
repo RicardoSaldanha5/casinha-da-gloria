@@ -757,9 +757,11 @@ p#avaliacao{
 
 
 .language-selector {
-    position: relative;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     display: inline-block;
-    margin: 10px;
+    
 }
 
 .dropdown-toggle {
@@ -770,7 +772,7 @@ p#avaliacao{
 }
 
 .dropdown-toggle img {
-    width: 40px;
+    width: 30px;
     height: auto;
     vertical-align: middle;
 }
@@ -782,11 +784,12 @@ p#avaliacao{
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--light-cream);
+    border: 1px solid var(--luxury-gold);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
 }
 
 .dropdown-menu.show {
@@ -801,9 +804,9 @@ p#avaliacao{
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
+    color: var(--deep-green);
 }
 
 .dropdown-menu li a:hover {
-    background-color: #f0f0f0;
+    background-color: #f5e5b1;
 }
